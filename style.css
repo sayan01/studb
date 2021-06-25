@@ -26,13 +26,19 @@ main{
 
 .tipsbody{
     display: grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 125px 1fr;
 }
 .tipsbody h3{
     padding: 18px 0 0 0;
 }
 .tipsbody *{
     grid-column: 1 / 3;
+}
+.tipsbody code, .tipsbody p{
+    padding-top: 0;
+    margin-top: 0;
+    font-size: 1rem;
+    line-height: 1rem;
 }
 .tipsbody code{
     grid-column: 1 / 2;
