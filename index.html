@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IITMPOD Student Database</title>
+<!-- font awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- custom stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="res/fav2.png" type="image/png">
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand mb-0 h1"href="/">
+            <img src="res/favicon.png" height="35" class="me-2"> studb
+          </a>
+        </div>
+      </nav>
+      <main>
+          <div class="container-fluid text-center py-5">
+              <h1 class="display-5 heading">
+                  IITMPOD Student Database
+                </h1>
+                <h2 class="text-muted fs-4">Lookup all the IITMPOD Students by their
+                    email id, group id, or house name.
+                </h2>
+          </div>
+          <div class="container-fluid my-3 vp">
+            <form class="d-flex flex-row justify-content-center sform" onsubmit="return false">
+                <select class="form-select" id="ssel">
+                    <option selected>Email ID</option>
+                    <option value="1">Group ID</option>
+                    <option value="2">House</option>
+                </select>
+                <input 
+                class="form-control mx-2" 
+                type="search" 
+                placeholder="Search" 
+                id="sbar" aria-label="Search" 
+                autocomplete="off">
+                <a class="btn btn-outline-success" id="sbut">Search</a>
+              </form>
+              <div class="container-fluid my-3 tbox text-center">
+                  <textarea 
+                  name="students" 
+                  id="students" 
+                  cols="40" rows="15" 
+                  readonly placeholder="no results"></textarea>
+              </div>
+          </div>
+          <div class="container-fluid my-3 tips">
+              <h2 class="text-dark fs-3">Examples</h2>
+              <div class="tipsbody">
+                  <div class="text">
+                    The search bar uses regex to match the queries,
+                     advanced search queries can thus be performed easily.
+                    </div>
+                  <h3 class="text-dark fs-5">Group ID</h3>
+                  <code>...</code> <p>gives only 3 digit groups </p>
+                  <code>..</code> <p>gives 2 or 3 digit groups </p>
+                  <code>^..$</code> <p>gives only 2 digit groups </p>
+                  <code>20.</code> <p>gives 3 digit groups starting with 20 </p>
+                  <code>20.*</code> <p>gives 2 or 3 digit groups starting with 20 </p> 
+                  <code>^29$</code> <p>gives only group 29 </p>
+                  <h3 class="text-dark fs-5">Email ID</h3>
+                  <code>21F1</code> <p>gives first batch students </p>
+                  <code>6567|3422</code> <p>gives two results </p>
+                  <code>0{5}</code> <p>gives emails with 5 or more zeros </p>
+                  <h3 class="text-dark fs-5">House</h3>
+                  <code>Sundarbans</code> <p>gives Sundarbans members </p>
+                  <code>Sunderbans</code> <p>gives nothing </p>
+                  <h3 class="text-dark fs-5">Regex References:</h3>
+                  <div class="tips-reference">
+                      <a class="link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">
+                        MDN Web Docs
+                    </a>
+                    <br>
+                    <a class="link" href="https://regexr.com/">Regexr</a>
+                </div>
+              </div>
+          </div>
+      </main>
+
+      <footer class="footer sticky-bottom bg-dark">
+        <div class="container-fluid text-muted">
+            studb &copy; Sayan Ghosh 2021
+        </div>
+      </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
